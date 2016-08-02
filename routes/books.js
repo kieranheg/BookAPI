@@ -62,7 +62,15 @@ router
         res.status(500).send(err);
       else
         res.json(req.book);
-    });
+    })
+  })
+  .delete('/:bookId', function (req, res) {
+    req.book.remove(function (err) {
+      if (err)
+        res.status(500).send(err);
+      else
+        res.status(204).send('Removed');
+    })
   });
 
 function applyQueryFilter(queryParam) {
