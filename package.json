@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=BookAPI:* nodemon ./bin/www"
+    "start": "DEBUG=BookAPI:* nodemon ./bin/www",
+    "test": "./node_modules/mocha/bin/mocha tests/*Test.js --reporter nyan"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -14,5 +15,11 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
     "mongoose": "~4.5.7"
+  },
+  "devDependencies": {
+    "supertest": "~2.0.0",
+    "should": "~10.0.0",
+    "sinon": "~1.17.5",
+    "mocha": "~3.0.1"
   }
 }
